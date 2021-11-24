@@ -23,7 +23,9 @@ build
 | ExchangeName                 | The exchange to which fluent-bit send its logs                                                  | ""            |
 | ExchangeType                 | The exchange-type                                                                               | ""            |
 | RoutingKey                   | The routing-key pattern                                                                         | ""            |
-| RoutingKeyDelimiter          | The Delemiter which seperates the routing-key parts                                             |  "."          |
+| RoutingKeyDelimiter          | The Delemiter which seperates the routing-key parts                                             | "."           |
+| RoutingKeyDefaultValue       | The routing-key default value to use if empty or error accessing                                | ""            |
+| RoutingKeyErrorOnEmpty       | If enabled, fluentd errors on records without routing key or with empty routing key             | ""            |
 | RemoveRkValuesFromRecord     | If enabled fluentd deletes the values of the record,  which have been stored in the routing-key | ""            |
 
 ### Routing-Key pattern
