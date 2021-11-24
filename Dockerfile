@@ -1,17 +1,16 @@
-FROM golang:1.13  as building-stage
-
-RUN go get github.com/fluent/fluent-bit-go/output && \ 
-    go get github.com/streadway/amqp
+FROM golang:1.17  as building-stage
 
 COPY ./*.go /go/src/
+COPY ./go.mod /go/src/
+COPY ./go.sum /go/src/
 
 COPY ./Makefile /go/src
 
-WORKDIR /go/src
+WORKDIR /go/src/
 
-RUN make
+RUN go mod download && make
 
-FROM fluent/fluent-bit:1.3
+FROM fluent/fluent-bit:1.8.10
 
 LABEL maintainer="Björn Franke"
 

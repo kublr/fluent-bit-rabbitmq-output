@@ -2,7 +2,6 @@
 
 With this fluent-bit-plugin it is possible to send logs and metrics, which have been collected by fluent-bit, to a rabbitmq-exchange. Furthermore it is possible with this plugin to to store data fields from each collected log or metric into the routing-key .
 
-
 ## Build
 
 Run the following command to build the plugin:

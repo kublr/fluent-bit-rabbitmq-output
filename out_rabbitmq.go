@@ -118,7 +118,7 @@ func FLBPluginInit(ctx unsafe.Pointer) int {
 
 	goPluginContext.routingKeyErrorOnEmpty, err = strconv.ParseBool(routingKeyErrorOnEmptyStr)
 	if err != nil {
-		logError("Couldn't parse RemoveRkValuesFromRecord to boolean: ", err)
+		logError("Couldn't parse RoutingKeyErrorOnEmpty to boolean: ", err)
 		return output.FLB_ERROR
 	}
 
